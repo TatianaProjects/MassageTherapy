@@ -2,6 +2,10 @@
 
 A modern React SPA for a massage and wellness business.
 
+## Live Demo
+
+[https://your-netlify-link.netlify.app](https://renewandrelaxmassage.netlify.app/)
+
 ## Features
 
 - React Router navigation
@@ -20,6 +24,4 @@ A modern React SPA for a massage and wellness business.
 - JavaScript
 - CSS3
 
-## Live Demo
 
-https://your-netlify-link.netlify.app
