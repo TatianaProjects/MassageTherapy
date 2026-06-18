@@ -352,3 +352,92 @@ nav h2{
   }
 }
 
+@media (max-width:768px){
+
+  nav{
+    flex-direction:column;
+    padding:15px;
+    gap:15px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .hero-content{
+    padding:25px;
+    margin:20px;
+  }
+
+  .page-container{
+    padding:110px 20px 40px;
+  }
+
+  .page-container h1{
+    font-size:36px;
+  }
+
+  .services-container,
+  .reviews-container,
+  .contact-container{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .service-card,
+  .review-card,
+  .contact-card{
+    width:100%;
+    max-width:260px;
+  }
+
+  .glass-card{
+  padding: 5px;
+  }
+
+  
+  .service-card p,
+  .review-card p,
+  .contact-card p{
+  font-size:15px;
+}
+  .service-card h2,
+  .review-card h3,
+  .contact-card h3{
+  font-size:20px;
+}
+
+  .location-card{
+    width:100%;
+    max-width:350px;
+  }
+
+  .slider-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+}
