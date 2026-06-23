@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav>
 
-      <h2>Renew & Relax</h2>
+      <h2>Balanced Life Massage</h2>
 
       <div className="nav-links">
 
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
 
-        <Link to="/services">Services</Link>
+        <NavLink to="/services">Services</NavLink>
 
-        <Link to="/reviews">Client Reviews</Link>
+        <NavLink to="/reviews">Client Reviews</NavLink>
 
-        <Link to="/contact">Contact</Link>
+        <NavLink to="/contact">Contact</NavLink>
 
       </div>
 

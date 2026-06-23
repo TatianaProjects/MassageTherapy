@@ -4,6 +4,7 @@ import Home from "./Home";
 import Services from "./Services";
 import Reviews from "./Reviews";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 import "./App.css";
 
@@ -22,6 +23,8 @@ function App () {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      <Footer />
 
     </BrowserRouter>
   )
