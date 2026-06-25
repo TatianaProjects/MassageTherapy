@@ -4,7 +4,7 @@ A modern React SPA for a massage and wellness business.
 
 ## Live Demo
 
-[https://your-netlify-link.netlify.app](https://renewandrelaxmassage.netlify.app/)
+[https://your-netlify-link.netlify.app](https://balancedlifemassage.netlify.app/)
 
 ## Features
 
