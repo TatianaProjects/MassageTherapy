@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { services } from "./ServicesData";
-import swal from "sweetalert";
+import dayjs from "dayjs";
+
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+
 
 function Contact() {
 
@@ -13,6 +20,7 @@ function Contact() {
   });
 
   const [errors, setErrors] = useState({});
+  const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleChange = (e) => {
 
@@ -35,6 +43,7 @@ function Contact() {
       [name]: value
     });
   };
+
 
   const validateForm = () => {
 
@@ -69,6 +78,9 @@ function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
+
+
+
   const handleSubmit = (e) => {
 
     e.preventDefault();
@@ -82,12 +94,7 @@ function Contact() {
       JSON.stringify(appointment)
     );
 
-    swal({
-      title: "Appointment Booked!",
-      text: "We look forward to helping you relax and restore balance.",
-      icon: "success",
-      button: "OK"
-    });
+    setOpenSnackbar(true);
 
     setAppointment({
       name: "",
@@ -178,14 +185,25 @@ function Contact() {
 
           </select>
 
-          <input
-            type="date"
-            name="date"
-            value={appointment.date}
-            onChange={handleChange}
-            min={new Date().toISOString().split("T")[0]}
-            required
-          />
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              label="Appointment Date"
+              value={
+                appointment.date
+                  ? dayjs(appointment.date)
+                  : null
+              }
+              onChange={(newValue) =>
+                setAppointment({
+                  ...appointment,
+                  date: newValue
+                    ? newValue.format("YYYY-MM-DD")
+                    : ""
+                })
+              }
+              disablePast
+            />
+          </LocalizationProvider>
 
           {errors.date && (
             <p className="error">{errors.date}</p>
@@ -199,7 +217,7 @@ function Contact() {
 
       </div>
 
-      {/* LOCATION */}
+      
 
       <div className="location-section glass-card">
 
@@ -207,10 +225,9 @@ function Contact() {
 
           <h2>Visit Our Studio</h2>
 
-          <p>Conveniently located in Kanata, on the west side of Ottawa.</p>
-          <p>Free parking available.</p>
-          <p>Calm and welcoming wellness environment.</p>
-          <p>Flexible appointment scheduling.</p>
+          <p>Conveniently located in Kanata, on the west side of Ottawa. 
+            Enjoy a calm wellness environment with flexible appointment scheduling and free parking available.
+          </p>
 
         </div>
 
@@ -226,7 +243,7 @@ function Contact() {
 
       </div>
 
-      {/* CONTACT INFO */}
+      
 
       <h2 className="section-title">Contact Information</h2>
 
@@ -253,6 +270,19 @@ function Contact() {
         </div>
 
       </div>
+
+      <Snackbar
+          open={openSnackbar}
+          autoHideDuration={4000}
+          onClose={() => setOpenSnackbar(false)}
+        >
+          <Alert
+            severity="success"
+            onClose={() => setOpenSnackbar(false)}
+          >
+            Appointment booked successfully!
+          </Alert>
+      </Snackbar>
 
     </div>
   );

@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { services } from "./ServicesData";
+import FAQ from "./FAQ";
 
 function Services() {
 
@@ -51,6 +52,12 @@ return (
         ))}
 
       </div>
+
+      <div id="faq" className="faq-section">
+        <h2 className="section-title">Service Information</h2>
+        <FAQ />
+      </div>
+
 
     </div>
   );

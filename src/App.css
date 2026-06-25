@@ -315,6 +315,7 @@ nav h2{
 
 .location-map{
   flex:1;
+  width:100%;
 }
 
 .section-title{
@@ -357,14 +358,6 @@ nav h2{
   margin-bottom:5px;
 }
 
-.nav-links a.active{
-  color:var(--accent);
-  font-weight:700;
-}
-
-.nav-links a.active::after{
-  width:100%;
-}
 .footer{
   text-align:center;
   padding:30px 20px;
@@ -408,6 +401,37 @@ nav h2{
 .footer p{
   margin:8px 0;
   color:var(--dark-sage);
+}
+
+.faq-section{
+  max-width:800px;
+  margin:80px auto;
+}
+
+.faq-item{
+  margin-bottom:15px;
+}
+
+.faq-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+.faq-question h3{
+  margin:0;
+  color:var(--accent);
+  font-size:18px;
+}
+
+.faq-question span{
+  font-size:28px;
+  color:var(--accent);
+}
+
+.faq-answer{
+  margin-top:15px;
 }
 
 
@@ -495,7 +519,7 @@ nav h2{
   .review-card,
   .contact-card{
     width:100%;
-    max-width:260px;
+    max-width:300px;
   }
 
   .glass-card{
@@ -534,6 +558,18 @@ nav h2{
   .location-section{
   flex-direction:column;
 }
+
+.location-map iframe{
+  height:220px;
+}
+
+ .faq-question h3{
+    font-size:16px;
+  }
+
+  .faq-question span{
+    font-size:22px;
+  }
 
 }
 
